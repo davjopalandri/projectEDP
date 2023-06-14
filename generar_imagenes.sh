@@ -1,0 +1,1 @@
+ Generar archivo de imagenes
