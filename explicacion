@@ -1,0 +1,6 @@
+1.creas una carpeta en tu compu
+2.entras a la carpeta y pone git status .Te va decir que no es un repositorio
+3.git init , te inicializa el repo
+4.git branch -M sil . te cambia el nombre de tu rama principal a sil
+5.git remote add nombre_que_le_vas_a_poner link_del_repo
+6.git remote , te va a listar los repos remotos
