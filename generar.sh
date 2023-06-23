@@ -1,5 +1,3 @@
- #Generar archivo de imagenes
- 
 #!/bin/bash
 
 cantidad=$1
@@ -27,4 +25,5 @@ md5sum imagenes.zip > checksum.txt
 
 # Eliminar archivos temporales
 rm lista_nombres
-rm -r imagenes:wq
+rm -r imagenes
+
