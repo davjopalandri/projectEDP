@@ -11,7 +11,10 @@ curl -L 'https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/mas
 mkdir -p imagenes
 
 # Obtener nombres al azar , modificar la primer letra a mayusc. con awk ( selecciona el primer caracter de c/ linea ($0) y lo convierte a mayusc., y luego selecciona todos los caract. a partir del segundo carac#ter y lo transforma en minuscula
-nombres=$(cat lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $cantidad  | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}')
+#nombres=$(cat lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $cantidad  | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}')
+
+#OPCION 2: OBTENER NOMBRES AL AZAR Y CAMBIAR A MAY. CON SED (EL "\u" antes del & indica que la primer letra debe estar en mayusc)
+nombres=$(cat lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $cantidad | sed 's/.*/\u&/')
 
 
 # Generar imágenes y asignar nombres de archivo
