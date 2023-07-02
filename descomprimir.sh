@@ -30,7 +30,7 @@ if [ $check_result -eq 0 ]; then
   mkdir -p imagenes
 
   # Descomprime el archivo de imágenes en la carpeta 'imagenes'
-  tar -xzf "$IMAGENES" -C imagenes/
+  tar -xzf "$IMAGENES" -C ./
 
   echo "Descompresión completa. Las imágenes se encuentran en la carpeta 'imagenes'."
 else
