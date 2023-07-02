@@ -4,7 +4,7 @@
 ENTRADA=$1
 
 #Descarga una lista de nombres de la web en un archivo llamado lista_nombres
-echo $(curl 'https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv' -o lista_nombres)
+echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' c -o lista_nombres)
 
 #El comando cat -e devuelve los valores con salto de linea.
 #De la lista de nombres toma los datos necesarios (Nombre y apellido primera columna) con awk.
@@ -39,4 +39,5 @@ md5sum imagenes.tar.gz > checksum.txt
 
 # Elimina archivos temporales
 rm lista_nombres
-rm -r imagenes
+
+#rm -r imagenes
