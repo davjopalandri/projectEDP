@@ -13,21 +13,19 @@ CHECKSUM=$2
 # Verifica si se ingresaron 2 argumentos.
 [ $# -ne 2 ] && echo "Error: Debes proporcionar dos archivos como argumentos, (uno con las imágenes y otro con una suma de verificación)" && exit 1
 
-# Verifica si el archivo de imágenes existe
+# Verifica si el archivo de imágenes existe.
 [ ! -f "$IMAGENES" ] && echo "Error: El archivo de imágenes '$IMAGENES' no existe." && exit 1
 
-# Verifica si el archivo de suma de verificación existe
+# Verifica si el archivo de suma de verificación existe.
 [ ! -f "$CHECKSUM" ] && echo "Error: El archivo "$CHECKSUM" no existe." && exit 1
 
 
-# Verifica la integridad de las imágenes utilizando la suma de verificación
+# Verifica la integridad de las imágenes utilizando la suma de verificación.
 md5sum --check "$CHECKSUM"
-check_result=$?
+RESULTADO_DEL_CHECK=$?
 
-# Si la verificación fue exitosa, procede a descomprimir las imágenes
-if [ $check_result -eq 0 ]; then
-  # Crea una carpeta para las imágenes
-  mkdir -p imagenes
+# Si la verificación fue exitosa, procede a descomprimir las imágenes.
+if [ $RESULTADO_DEL_CHECK -eq 0 ]; then
 
   # Descomprime el archivo de imágenes en la carpeta 'imagenes'
   tar -xzf "$IMAGENES" -C ./
