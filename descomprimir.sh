@@ -11,7 +11,7 @@ IMAGENES=$1
 CHECKSUM=$2
 
 # Verifica si se ingresaron 2 argumentos.
-[ $# -ne 2 ] && echo "Error: Debes proporcionar dos archivos como argumentos" && exit 1
+[ $# -ne 2 ] && echo "Error: Debes proporcionar dos archivos como argumentos, (uno con las imágenes y otro con una suma de verificación)" && exit 1
 
 # Verifica si el archivo de imágenes existe
 [ ! -f "$IMAGENES" ] && echo "Error: El archivo de imágenes '$IMAGENES' no existe." && exit 1
