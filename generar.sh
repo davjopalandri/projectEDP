@@ -39,4 +39,4 @@ md5sum imagenes.tar.gz > checksum.txt
 
 # Elimina archivos temporales
 rm lista_nombres
-#rm -r imagenes
+rm -r imagenes
