@@ -13,6 +13,8 @@ echo $(curl 'https://raw.githubusercontent.com/fernandezpablo85/name_suggestions
 #Toma la misma cantidad de nombres que el argumento ingresado.
 NOMBRES=$(cat -e lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $ENTRADA)
 
+mkdir -p imagenes
+
 #IFS es el acrónimo de "Internal Field Separator", 
 #Determinar cómo separar elementos de NOMBRES. (Para que tome el apellido ademas del nombre) 
 IFS=$'\n'
@@ -22,7 +24,19 @@ IFS=$'\n'
 for I in $NOMBRES; do
     #Ejecuta el comando para descargar imagenes con curl -L del servidor y las guarda en 
     #imagenes/$I con el nombre correspondiente.
-    $(curl -L 'https://source.unsplash.com/random/900%C3%97700/?person' -o imagenes/$I)
-    #Espera un segundo antes de iterar.
+    $(curl -L 'https://source.unsplash.com/random/900%C3%97700/?person' -o imagenes/$I.jpg)
+    #Espera un segundo antes de iterar para no saturar el servicio y evitar problemas.
     sleep 1
 done
+
+# Comprime imágenes
+tar -czvf imagenes.tar.gz imagenes
+
+# Al utilizar md5sum en un archivo, se genera un resultado que consta de dos partes:
+# la suma de verificación y el nombre del archivo. 
+# Si el archivo se modifica de alguna manera, su suma de verificación cambiará.
+md5sum imagenes.tar.gz > checksum.txt
+
+# Elimina archivos temporales
+rm lista_nombres
+#rm -r imagenes
