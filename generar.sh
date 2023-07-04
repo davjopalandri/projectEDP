@@ -4,6 +4,7 @@
 ENTRADA=$1
 
 #Descarga una lista de nombres de la web en un archivo llamado lista_nombres
+
 echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' -o lista_nombres)
             
 #El comando cat -e devuelve los valores con salto de linea.
@@ -40,3 +41,4 @@ md5sum imagenes.tar.gz > checksum.txt
 # Elimina archivos temporales
 rm lista_nombres
 rm -r imagenes
+
