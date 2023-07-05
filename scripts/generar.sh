@@ -36,7 +36,7 @@ tar -czvf imagenes.tar.gz imagenes
 # Al utilizar md5sum en un archivo, se genera un resultado que consta de dos partes:
 # la suma de verificación y el nombre del archivo. 
 # Si el archivo se modifica de alguna manera, su suma de verificación cambiará.
-md5sum imagenes.tar.gz > checksum.txt
+md5sum imagenes.tar.gz > checksum
 
 # Elimina archivos temporales
 rm lista_nombres
