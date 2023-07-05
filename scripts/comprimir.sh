@@ -18,4 +18,4 @@ echo $(($COLUMNA_DE_NOMBRES_1 + $COLUMNA_DE_NOMBRES_2)) > total_nombres_terminad
 tar -czvf imagenes_comprimidas.tar.gz lista_nombres_imagenes.txt lista_nombres_validos.txt total_nombres_terminados_en_a.txt
 
 # Cambiar permisos del archivo comprimido para que pueda accederse desde fuera del contenedor
-chmod 777 imagenes_comprimidas.tar.gz
+

@@ -3,6 +3,8 @@
 #Pide un argumento de entrada que indica cuantas imagenes generar.
 ENTRADA=$1
 
+[ $# -ne 1 ] && "Este script funciona con un argumento entero positivo" && exit 1
+
 #Descarga una lista de nombres de la web en un archivo llamado lista_nombres
 
 echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' -o lista_nombres)

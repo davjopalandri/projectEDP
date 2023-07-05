@@ -2,11 +2,11 @@ FROM ubuntu
 
 RUN apt-get update && apt-get install -y imagemagick
 
-WORKDIR tp-edp
+RUN apt-get install -y curl
 
-RUN mkdir -p scripts
+WORKDIR /app
 
-ADD ./scripts/menu.sh ./scripts/menu.sh
+ADD scripts scripts
 
 ENTRYPOINT ["bash", "scripts/menu.sh"]
 

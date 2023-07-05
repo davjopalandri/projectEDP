@@ -34,3 +34,4 @@ if [ $RESULTADO_DEL_CHECK -eq 0 ]; then
 else
   echo "Error: La suma de verificación no coincide. No se puede proceder con la descompresión."
 fi
+

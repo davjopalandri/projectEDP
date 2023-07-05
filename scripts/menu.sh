@@ -4,7 +4,7 @@
 generar_imagenes() {
   echo "Ingrese la cantidad de imágenes a generar:"
   read cantidad
-  
+  [[ ! $cantidad =~ ^[0-9]+$ ]] && "Tiene que ingresar un entero positivo" && return 1  
   echo "Generando $cantidad imágenes..."
   ./generar.sh $cantidad
 }
@@ -50,3 +50,4 @@ while true; do
   esac
 
 done
+
