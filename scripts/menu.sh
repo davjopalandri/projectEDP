@@ -12,8 +12,8 @@ generar_imagenes() {
 # Función para descomprimir archivos utilizando descomprimir.sh
 descomprimir_archivos() {
   echo "Descomprimiendo archivos..."
-  archivo_imagenes=./imagenes.tar.gz
-  archivo_checksum=./checksum
+  archivo_imagenes=../datasets/imagenes.tar.gz
+  archivo_checksum=../datasets/checksum
   ./descomprimir.sh $archivo_imagenes $archivo_checksum
 }
 

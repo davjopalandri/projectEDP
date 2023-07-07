@@ -3,6 +3,13 @@
 #Pide un argumento de entrada que indica cuantas imagenes generar.
 ENTRADA=$1
 
+#if [[ ! -d ../datasets ]]; then
+#	echo "Error, la carpeta datasets no existe, montamos el volume"
+#	sudo docker run -v ./datasets:/app/datasets projectedp
+#else
+#	sudo docker run -v ./datasets:/app/datasets projectedp
+#fi
+
 [ $# -ne 1 ] && "Este script funciona con un argumento entero positivo" && exit 1
 
 #Descarga una lista de nombres de la web en un archivo llamado lista_nombres
@@ -32,13 +39,16 @@ for I in $NOMBRES; do
     sleep 1
 done
 
+mkdir -p ../datasets
+
 # Comprime imágenes
-tar -czvf imagenes.tar.gz imagenes
+tar -czvf ../datasets/imagenes.tar.gz imagenes
 
 # Al utilizar md5sum en un archivo, se genera un resultado que consta de dos partes:
 # la suma de verificación y el nombre del archivo. 
 # Si el archivo se modifica de alguna manera, su suma de verificación cambiará.
-md5sum imagenes.tar.gz > checksum
+md5sum ../datasets/imagenes.tar.gz > ../datasets/checksum
+
 
 # Elimina archivos temporales
 rm lista_nombres
