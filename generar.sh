@@ -4,8 +4,8 @@
 EINTRADA=$1
 
 #Descarga una lista de nombres de la web en un archivo llamado lista_nombres
-#echo $(curl 'https://raw.githubusercontent.com/fernandezpablo85/name_suggestions/master/assets/dict.csv' -o lista_nombres)
-echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' -o lista_nombres)
+#echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' -o lista_nombres)
+curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/main/dict.csv' -o lista_nombres
 
 
 #El comando cat -e devuelve los valores con salto de linea.
@@ -13,7 +13,13 @@ echo $(curl 'https://raw.githubusercontent.com/adalessandro/EdP-2023-TP-Final/ma
 #Ordena y elimina repetidos si llegara a haber con los comandos sort y uniq.
 #Los desordena (comando shuf) de manera aleatoria. 
 #Toma la misma cantidad de nombres que el argumento ingresado.
-NOMBRES=$(cat -e lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $ENTRADA)
+
+#NOMBRES=$(cat -e lista_nombres | awk -F',' '{print $1}' | sort | uniq | shuf -n $ENTRADA)
+
+# Toma los datos necesarios (Nombre y apellido, primera columna) con awk.
+# Ordena y elimina duplicados con sort y uniq.
+# Luego, los desordena de manera aleatoria con shuf y toma la misma cantidad de nombres que el argumento ingresado.
+NOMBRES=$(awk -F',' '{print $1}' lista_nombres | sort | uniq | shuf -n $ENTRADA)
 
 mkdir -p imagenes
 
@@ -42,4 +48,25 @@ md5sum imagenes.tar.gz > checksum.txt
 # Elimina archivos temporales
 rm lista_nombres
 rm -r imagenes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
