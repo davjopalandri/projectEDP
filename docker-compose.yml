@@ -3,4 +3,4 @@ services:
   tp-edp:
     build: .
     volumenes: 
-       ./datasets:/app/datasets
+       ./datasets:/app/datasets projectedp
