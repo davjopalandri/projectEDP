@@ -2,5 +2,5 @@ version:'3.3'
 services:
   tp-edp:
     build: .
-    volumenes: 
-       ./datasets:/app/datasets projectedp
+    volumen: 
+       ./datasets:/app/datasets 
