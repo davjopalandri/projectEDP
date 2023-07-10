@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  entornos-de-programacion:
+    build: .
+    volumes: 
+      - ./datasets:/app/datasets 

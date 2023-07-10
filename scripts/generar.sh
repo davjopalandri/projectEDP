@@ -39,15 +39,15 @@ for I in $NOMBRES; do
     sleep 1
 done
 
-mkdir -p ../datasets
+mkdir -p /app/datasets
 
 # Comprime imágenes
-tar -czvf ../datasets/imagenes.tar.gz imagenes
+tar -czvf /app/datasets/imagenes.tar.gz imagenes
 
 # Al utilizar md5sum en un archivo, se genera un resultado que consta de dos partes:
 # la suma de verificación y el nombre del archivo. 
 # Si el archivo se modifica de alguna manera, su suma de verificación cambiará.
-md5sum ../datasets/imagenes.tar.gz > ../datasets/checksum
+md5sum /app/datasets/imagenes.tar.gz > /app/datasets/checksum
 
 
 # Elimina archivos temporales
