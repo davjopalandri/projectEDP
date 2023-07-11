@@ -1,3 +1,0 @@
-#!/bin/bash
-
-mkdir ../dataset && echo "Hola mundo" > ../dataset/img.txt

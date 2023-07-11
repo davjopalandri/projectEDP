@@ -45,8 +45,7 @@ while true; do
     2) descomprimir_archivos ;;
     3) procesar_imagenes ;;
     4) comprimir_archivos ;;
-    5) exit ;;
-    *) echo "Opción inválida. Por favor, seleccione nuevamente." ;;
+    *) exit ;;
   esac
 
 done
