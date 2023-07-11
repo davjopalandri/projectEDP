@@ -31,6 +31,12 @@ comprimir_archivos() {
 
 # Menú principal
 while true; do
+  echo "------" 
+  echo "------"
+  echo "------"
+  echo "------"
+  echo "------"
+
   echo "Seleccione una opción:"
   echo "1. Generar imágenes"
   echo "2. Descomprimir archivos"
