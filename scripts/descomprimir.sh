@@ -28,7 +28,7 @@ RESULTADO_DEL_CHECK=$?
 if [ $RESULTADO_DEL_CHECK -eq 0 ]; then
 
   # Descomprime el archivo de imágenes en la carpeta 'imagenes'
-  tar -xzf "$IMAGENES" -C ../datasets/
+  tar -xzf "$IMAGENES" -C /app/datasets/
 
   echo "Descompresión completa. Las imágenes se encuentran en la carpeta 'imagenes'."
 else

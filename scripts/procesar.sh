@@ -1,9 +1,9 @@
 #!/bin/bash
 
-mkdir -p "../datasets/imagenes procesadas"
+mkdir -p "/app/datasets/imagenes procesadas"
 
 # Iterar sobre las imágenes en el directorio de entrada
-for I in ../datasets/imagenes/*; do
+for I in /app/datasets/imagenes/*; do
 
     # Obtener el nombre del archivo sin la ruta
     NOMBRE_IMG=$(basename "$I")
@@ -13,7 +13,7 @@ for I in ../datasets/imagenes/*; do
     if [[ $NOMBRE_IMG =~ ^[[:upper:]][[:lower:]]+" "[[:upper:]][[:lower:]]+\. ]]; then
 
         # Ruta completa de salida para el archivo procesado
-        ARCHIVO_SALIDA="../datasets/imagenes procesadas/$NOMBRE_IMG"
+        ARCHIVO_SALIDA="/app/datasets/imagenes procesadas/$NOMBRE_IMG"
 
           
         # Utiliza ImageMagick para recortar la imagen a 512x512

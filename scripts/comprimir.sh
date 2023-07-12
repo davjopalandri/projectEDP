@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Generar archivo con la lista de nombres de todas las imágenes
-cd ../datasets/imagenes
+cd /app/datasets/imagenes
 ls -1 * > ../lista_nombres_imagenes.txt
-cd ..
+cd /app/datasets
 # Generar archivo con la lista de nombres válidos
 egrep ^[[:upper:]][[:lower:]]+" "[[:upper:]][[:lower:]]+\. ./lista_nombres_imagenes.txt > lista_nombres_validos.txt
 
