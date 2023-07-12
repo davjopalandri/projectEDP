@@ -31,10 +31,6 @@ comprimir_archivos() {
 
 # Menú principal
 while true; do
-  echo "------" 
-  echo "------"
-  echo "------"
-  echo "------"
   echo "------"
 
   echo "Seleccione una opción:"
